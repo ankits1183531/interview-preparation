@@ -10,7 +10,7 @@ function debounce(fn, time) {
     return function () {
         let context = this,
             params = arguments;
-        clearInterval(timer);
+            clearTimeout(timer);
         timer = setTimeout(() => {
             fn.apply(context, params);
         }, time);
@@ -38,4 +38,4 @@ function throttling(fn, delay) {
     }
 }
 
-throttling(getData,300);
+throttling(getData, 300);
